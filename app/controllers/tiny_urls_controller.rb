@@ -4,7 +4,7 @@ class TinyUrlsController < ApplicationController
 
   # GET /tiny_urls or /tiny_urls.json
   def index
-    @tiny_urls = current_user.tiny_urls
+    @tiny_urls = current_user.tiny_urls.page(params[:page]).per(5)
   end
 
   # GET /tiny_urls/1 or /tiny_urls/1.json
