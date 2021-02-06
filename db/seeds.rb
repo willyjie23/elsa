@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.all.each do |i|
+  i.tiny_urls.create([
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id},
+    { reurl: 'https://test.com', user_id: i.id}
+  ])
+end
