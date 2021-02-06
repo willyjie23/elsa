@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_021705) do
+ActiveRecord::Schema.define(version: 2021_02_06_022227) do
 
   create_table "tiny_urls", force: :cascade do |t|
     t.string "reurl"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "base_url"
   end
 
   create_table "users", force: :cascade do |t|
