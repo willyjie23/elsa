@@ -9,6 +9,7 @@ class TinyUrlsController < ApplicationController
 
   # GET /tiny_urls/1 or /tiny_urls/1.json
   def show
+    @tiny_url.increment(:click_times, 1).save
   end
 
   # GET /tiny_urls/new
@@ -67,6 +68,6 @@ class TinyUrlsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tiny_url_params
-      params.require(:tiny_url).permit(:reurl)
+      params.require(:tiny_url).permit(:reurl, :name)
     end
 end

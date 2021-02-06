@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Reurl</th>
+      <th>短網址名稱</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,10 +13,11 @@
   <tbody>
     <% @tiny_urls.each do |tiny_url| %>
       <tr>
-        <td><%= link_to tiny_url.base_url, tiny_url.reurl %></td>
+        <td><%= link_to tiny_url.name, tiny_url_path(tiny_url) %></td>
         <td><%= link_to 'Show', tiny_url %></td>
         <td><%= link_to 'Edit', edit_tiny_url_path(tiny_url) %></td>
         <td><%= link_to 'Destroy', tiny_url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>點擊次數：<%= tiny_url.click_times %></td>
       </tr>
     <% end %>
   </tbody>

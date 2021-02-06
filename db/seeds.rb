@@ -12,7 +12,8 @@ User.all.each do |i|
       {
         reurl: 'https://google.com',
         base_url: "http://localhost:3000/#{sample}",
-        user_id: i.id
+        user_id: i.id,
+        name: 'test'
       }
     ])
   end
