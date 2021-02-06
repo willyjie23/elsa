@@ -4,7 +4,7 @@ class TinyUrlsController < ApplicationController
 
   # GET /tiny_urls or /tiny_urls.json
   def index
-    @tiny_urls = TinyUrl.all
+    @tiny_urls = current_user.tiny_urls
   end
 
   # GET /tiny_urls/1 or /tiny_urls/1.json
@@ -25,6 +25,7 @@ class TinyUrlsController < ApplicationController
     @tiny_url = TinyUrl.new(tiny_url_params)
     sample = rand(0000..9999).to_s.rjust(4, '0')
     @tiny_url.base_url = "#{request.base_url}/#{sample}"
+    @tiny_url.user_id = current_user.id
     respond_to do |format|
       if @tiny_url.save
         format.html { redirect_to @tiny_url, notice: "Tiny url was successfully created." }
