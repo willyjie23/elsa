@@ -2,7 +2,7 @@
 
 <p>
   <strong>Reurl:</strong>
-  <%= @tiny_url.reurl %>
+  <%= link_to @tiny_url.base_url, @tiny_url.reurl %>
 </p>
 
 <%= link_to 'Edit', edit_tiny_url_path(@tiny_url) %> |

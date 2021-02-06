@@ -23,7 +23,8 @@ class TinyUrlsController < ApplicationController
   # POST /tiny_urls or /tiny_urls.json
   def create
     @tiny_url = TinyUrl.new(tiny_url_params)
-
+    sample = rand(0000..9999).to_s.rjust(4, '0')
+    @tiny_url.base_url = "#{request.base_url}/#{sample}"
     respond_to do |format|
       if @tiny_url.save
         format.html { redirect_to @tiny_url, notice: "Tiny url was successfully created." }

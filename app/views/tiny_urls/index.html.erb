@@ -13,7 +13,7 @@
   <tbody>
     <% @tiny_urls.each do |tiny_url| %>
       <tr>
-        <td><%= tiny_url.reurl %></td>
+        <td><%= link_to tiny_url.base_url, tiny_url.reurl %></td>
         <td><%= link_to 'Show', tiny_url %></td>
         <td><%= link_to 'Edit', edit_tiny_url_path(tiny_url) %></td>
         <td><%= link_to 'Destroy', tiny_url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
